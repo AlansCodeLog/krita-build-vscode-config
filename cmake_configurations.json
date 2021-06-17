@@ -1,0 +1,10 @@
+{
+  "configurations": [
+    {
+      "name": "RelWithDebInfo",
+      "buildType": "RelWithDebInfo",
+		  "buildDirectory": "T:/Code/CLONES/kritadev/b_krita",
+      "generator":"Ninja"
+    }
+  ]
+}

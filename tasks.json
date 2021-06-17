@@ -1,0 +1,70 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"problemMatcher": [],
+	"presentation": {
+		"reveal": "silent",
+		"clear": true,
+		"showReuseMessage": false,
+	},
+	"type": "shell",
+	"options": {
+		"shell": {"executable": "cmd", "args": ["/C"]},
+		/* %SCRIPTS% is set in settings so all terminal instances and tasks can find env.bat. */
+	},
+	"tasks": [
+		{
+			"label": "Open Build Root",
+			"command": "explorer",
+			"args": [ "." ],
+			"options": {
+				"cwd": "${workspaceFolder}/../",
+			},
+		},
+		{
+			"label": "Run",
+			"dependsOn":["Build"],
+			"command": "%SCRIPTS%/run.bat",
+		},
+		{
+			"label": "Just Run",
+			"command": "%SCRIPTS%/run.bat",
+		},
+		{
+			"label": "Test",
+			"command": "%SCRIPTS%/test.bat",
+		},
+		{
+			"label": "Build",
+			"command": "%SCRIPTS%/build.bat",
+			"group": "build",
+		},
+		{
+			"label": "Build Deps",
+			"command": "%SCRIPTS%/build-deps.bat",
+		},
+		{
+			"label": "Configure",
+			"command": "%SCRIPTS%/configure.bat",
+		},
+		{
+			"label": "Configure Deps (Prebuilt)",
+			"command": "%SCRIPTS%/configure-deps-prebuilt.bat",
+		},
+		{
+			"label": "Configure Deps (Build)",
+			"command": "%SCRIPTS%/configure-deps-build.bat",
+		},
+		{
+			"label": "Open Crash Log",
+			"command": "code-insiders",
+			"args": ["%LocalAppData%/kritacrash.log"],
+		},
+		{
+			"label": "Delete Crash Log",
+			"command": "del",
+			"args": ["\"%LocalAppData%/kritacrash.log\""],
+		},
+	]
+}
