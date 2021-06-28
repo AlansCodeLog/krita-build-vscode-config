@@ -4,7 +4,6 @@
 	"version": "2.0.0",
 	"problemMatcher": [],
 	"presentation": {
-		"reveal": "silent",
 		"clear": true,
 		"showReuseMessage": false,
 	},
@@ -89,7 +88,7 @@
 		},
 		{
 			"label": "Echo VS Code Variables",
-			"command": "echo MINGW_BIN: ${config:MINGW_BIN}echo KRITA_DEV_DIR: ${config:KRITA_DEV_DIR} && echo KRITA_SOURCE_DIR: ${config:KRITA_SOURCE_DIR} && echo KRITA_BUILD_DIR: ${config:KRITA_BUILD_DIR} && echo KRITA_INSTALL_DIR: ${config:KRITA_INSTALL_DIR}",
+			"command": "echo KRITA_SCRIPTS_DIR: %KRITA_SCRIPTS_DIR% && echo MINGW_BIN: ${config:MINGW_BIN} && echo KRITA_DEV_DIR: ${config:KRITA_DEV_DIR} && echo KRITA_SOURCE_DIR: ${config:KRITA_SOURCE_DIR} && echo KRITA_BUILD_DIR: ${config:KRITA_BUILD_DIR} && echo KRITA_INSTALL_DIR: ${config:KRITA_INSTALL_DIR}",
 		},
 	]
 }

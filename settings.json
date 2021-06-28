@@ -3,8 +3,8 @@
 	// "variables" set like this can be accessed via ${config:VAR_NAME} anywhere, and unlike env variables can depend on eachother
 	// these are configured here so that all vscode files don't have to use hard coded paths
 	// backslashes are recommended since some commandline stuff (mostly explorer afaik) requires them
-	"MINGW_BIN": "${env:DEV_TOOLS}\\mingw64\\bin",
-	"KRITA_DEV_DIR": "${env:DEV_CLONES_DIR}\\kritadev",
+	"MINGW_BIN": "${env:DIR_DEV_TOOLS}\\mingw64\\bin",
+	"KRITA_DEV_DIR": "${env:DIR_DEV_CLONES}\\kritadev",
 	"KRITA_INSTALL_DIR": "${config:KRITA_DEV_DIR}\\i",
 	"KRITA_SOURCE_DIR": "${config:KRITA_DEV_DIR}\\krita",
 	"KRITA_BUILD_DIR": "${config:KRITA_DEV_DIR}\\b_krita",
