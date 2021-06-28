@@ -15,46 +15,53 @@
 	},
 	"tasks": [
 		{
-			"label": "Open Build Root",
+			"label": "Open Build Root Folder",
 			"command": "explorer",
-			"args": [ "." ],
-			"options": {
-				"cwd": "${workspaceFolder}/../",
-			},
+			"args": [ "${config:KRITA_DEV_DIR}" ],
+		},
+		{
+			"label": "Open Krita Resources Folder",
+			"command": "explorer",
+			"args": ["%APPDATA%\\krita"],
 		},
 		{
 			"label": "Run",
 			"dependsOn":["Build"],
-			"command": "%SCRIPTS%/run.bat",
+			"command": "%KRITA_SCRIPTS_DIR%/run.bat",
 		},
 		{
 			"label": "Just Run",
-			"command": "%SCRIPTS%/run.bat",
+			"command": "%KRITA_SCRIPTS_DIR%/run.bat",
 		},
 		{
 			"label": "Test",
-			"command": "%SCRIPTS%/test.bat",
+			"command": "%KRITA_SCRIPTS_DIR%/test.bat",
 		},
 		{
 			"label": "Build",
-			"command": "%SCRIPTS%/build.bat",
+			"command": "%KRITA_SCRIPTS_DIR%/build.bat",
 			"group": "build",
 		},
 		{
 			"label": "Build Deps",
-			"command": "%SCRIPTS%/build-deps.bat",
+			"command": "%KRITA_SCRIPTS_DIR%/build-deps.bat",
 		},
 		{
 			"label": "Configure",
-			"command": "%SCRIPTS%/configure.bat",
+			"command": "%KRITA_SCRIPTS_DIR%/configure.bat",
 		},
 		{
 			"label": "Configure Deps (Prebuilt)",
-			"command": "%SCRIPTS%/configure-deps-prebuilt.bat",
+			"command": "%KRITA_SCRIPTS_DIR%/configure-deps-prebuilt.bat",
 		},
 		{
 			"label": "Configure Deps (Build)",
-			"command": "%SCRIPTS%/configure-deps-build.bat",
+			"command": "%KRITA_SCRIPTS_DIR%/configure-deps-build.bat",
+		},
+		{
+			"label": "Open Krita Log",
+			"command": "code-insiders",
+			"args": ["%LocalAppData%/krita.log"],
 		},
 		{
 			"label": "Open Crash Log",
@@ -64,7 +71,25 @@
 		{
 			"label": "Delete Crash Log",
 			"command": "del",
-			"args": ["\"%LocalAppData%/kritacrash.log\""],
+			"args": ["%LocalAppData%\\kritacrash.log"],
+		},
+		{
+			"label": "Open kritarc",
+			"command": "code-insiders",
+			"args": ["%LocalAppData%/kritarc"],
+		},
+		{
+			"label": "Backup: kritarc, kritashortcutsrc, resourcecache.sqlite",
+			"command": "%KRITA_SCRIPTS_DIR%/tools/backup-config.bat",
+		},
+		{
+			"label": "Open resourcecache.sqlite",
+			"command": "${env:PROGRAMFILES}/DB Browser for SQLite/DB Browser for SQLite.exe",
+			"args": ["%APPDATA%/Krita/resourcecache.sqlite"]
+		},
+		{
+			"label": "Echo VS Code Variables",
+			"command": "echo MINGW_BIN: ${config:MINGW_BIN}echo KRITA_DEV_DIR: ${config:KRITA_DEV_DIR} && echo KRITA_SOURCE_DIR: ${config:KRITA_SOURCE_DIR} && echo KRITA_BUILD_DIR: ${config:KRITA_BUILD_DIR} && echo KRITA_INSTALL_DIR: ${config:KRITA_INSTALL_DIR}",
 		},
 	]
 }

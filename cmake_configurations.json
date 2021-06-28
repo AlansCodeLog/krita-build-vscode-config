@@ -3,7 +3,7 @@
     {
       "name": "RelWithDebInfo",
       "buildType": "RelWithDebInfo",
-		  "buildDirectory": "T:/Code/CLONES/kritadev/b_krita",
+		  "buildDirectory": "${config:KRITA_BUILD_DIR}",
       "generator":"Ninja"
     }
   ]

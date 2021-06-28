@@ -1,5 +1,6 @@
 pushd %cd%
-call %SCRIPTS%/env.bat
+call %KRITA_SCRIPTS_DIR%\env.bat
+
 @REM otherwise we might accidentally build in the folder this is run from
 mkdir "%DEPS_BUILD_DIR%"
 cd /D "%DEPS_BUILD_DIR%"
@@ -8,7 +9,7 @@ cd /D "%DEPS_BUILD_DIR%"
 @REM krita\build-tools\windows\build.cmd --no-interactive --jobs 8 --skip-krita --src-dir %SOURCE_DIR% --download-dir %DOWNLOAD_DIR% --deps-build-dir %DEPS_BUILD_DIR% --deps-install-dir %INSTALL_DIR%
 @REM Currently this is not working with ninja due to some syntax error???
 cmake ^
-%SOURCE_DIR%\3rdparty ^
+%SOURCE_DIR%/3rdparty ^
 -DSUBMAKE_JOBS=8 ^
 -DQT_ENABLE_DEBUG_INFO=OFF ^
 -DQT_ENABLE_DYNAMIC_OPENGL=ON ^
@@ -16,4 +17,5 @@ cmake ^
 -DINSTALL_ROOT=%INSTALL_DIR% ^
 -G "MinGW Makefiles" ^
 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+
 popd

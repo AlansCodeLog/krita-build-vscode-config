@@ -8,7 +8,7 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.19041.0",
-            "compilerPath": "C:/Tools/mingw64/bin/gcc.exe",
+            "compilerPath": "${config:MINGW_BIN}/gcc.exe",
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "windows-gcc-x64",
@@ -18,10 +18,9 @@
                 "path": [
                     "${workspaceFolder}/**"
                 ],
-                "limitSymbolsToIncludedHeaders": false,
-                "databaseFilename": "${workspaceFolder}/.vscode/.BROWSE.VC.DB"
+                "limitSymbolsToIncludedHeaders": false
             },
-            "compileCommands": "T:/Code/Clones/kritadev/b_krita/compile_commands.json"
+            "compileCommands": "${config:KRITA_BUILD_DIR}/compile_commands.json"
         }
     ],
     "version": 4

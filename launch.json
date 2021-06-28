@@ -5,27 +5,30 @@
 			"name": "(gdb) Launch",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "T:/Code/CLONES/kritadev/i/bin/krita.exe",
+			"program": "${config:KRITA_INSTALL_DIR}/bin/krita.exe",
+			"cwd": "${config:KRITA_INSTALL_DIR}/bin",
 			"args": [
 				"--new-image",
 				"RGBA,U8,1000,1000",
 				"--nosplash"
 			],
 			"stopAtEntry": false,
-			"cwd": "${workspaceFolder}",
 			"environment": [],
-			"externalConsole": false,
 			"MIMode": "gdb",
-			"miDebuggerPath": "C:/Tools/mingw64/bin/gdb.exe",
+			"miDebuggerPath": "${config:MINGW_BIN}/gdb.exe",
 			"setupCommands": [
 				{
 					"description": "Enable pretty-printing for gdb",
 					"text": "-enable-pretty-printing",
 					"ignoreFailures": true
+				},
+				{
+					"description": "Reduce gdb verbosity",
+					"text": "set print thread-events off",
+					"ignoreFailures": true
 				}
 			],
 			"preLaunchTask": "Install",
-			"visualizerFile": "c:\\Users\\Alan\\AppData\\Roaming\\Code - Insiders\\User\\workspaceStorage\\d58d60ba1b4a5c47185114abde18ae0e\\tonka3000.qtvsctools\\qt.natvis.xml"
 		}
 	]
 }
