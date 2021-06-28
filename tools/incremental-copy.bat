@@ -18,4 +18,3 @@ if "%i%"=="0" (
 ) else (
 	echo F|xcopy "%SOURCE%" "%DESTINATION%%i%"
 )
-pause
