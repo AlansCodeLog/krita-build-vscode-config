@@ -3,6 +3,8 @@
 @REM #region TOCONFIGURE
 @REM NOTE: The following env variables are set externally system wide for convenience: DIR_*, PATH_*.
 
+set BEEP_ON_BUILD_ERROR=TRUE
+
 set PYTHON=C:\Python38
 set MINGW_BASE=%DIR_DEV_TOOLS%\mingw64
 set CMAKE_BIN=%PROGRAMFILES%\CMake\bin
