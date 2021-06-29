@@ -17,5 +17,6 @@ cmake ^
 -DINSTALL_ROOT=%INSTALL_DIR% ^
 -G "MinGW Makefiles" ^
 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+if %errorlevel% neq 0 exit /b %errorlevel%
 
 popd

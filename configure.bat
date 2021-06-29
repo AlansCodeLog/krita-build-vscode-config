@@ -29,5 +29,6 @@ cmake ^
 -G Ninja ^
 -DCMAKE_BUILD_TYPE=RelWithDebInfo ^
 -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+if %errorlevel% neq 0 exit /b %errorlevel%
 
 popd

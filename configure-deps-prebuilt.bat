@@ -9,5 +9,6 @@ cmake ^
 %SOURCE_DIR%\build-tools\ci-deps ^
 -G Ninja ^
 -DCMAKE_INSTALL_PREFIX=%INSTALL_DIR%
+if %errorlevel% neq 0 exit /b %errorlevel%
 
 popd
