@@ -19,14 +19,10 @@
 			"args": [ "${config:KRITA_DEV_DIR}" ],
 		},
 		{
-			"label": "Open Krita Resources Folder",
-			"command": "explorer",
-			"args": ["%APPDATA%\\krita"],
-		},
-		{
 			"label": "Run",
 			"dependsOn":["Build"],
 			"command": "%KRITA_SCRIPTS_DIR%/run.bat",
+			"group": "build"
 		},
 		{
 			"label": "Just Run",
@@ -42,20 +38,24 @@
 			"group": "build",
 		},
 		{
-			"label": "Build Deps",
-			"command": "%KRITA_SCRIPTS_DIR%/build-deps.bat",
-		},
-		{
 			"label": "Configure",
 			"command": "%KRITA_SCRIPTS_DIR%/configure.bat",
 		},
 		{
-			"label": "Configure Deps (Prebuilt)",
-			"command": "%KRITA_SCRIPTS_DIR%/configure-deps-prebuilt.bat",
+			"label": "Deps Build",
+			"command": "%KRITA_SCRIPTS_DIR%/deps-build.bat",
 		},
 		{
-			"label": "Configure Deps (Build)",
-			"command": "%KRITA_SCRIPTS_DIR%/configure-deps-build.bat",
+			"label": "Deps Clean",
+			"command": "%KRITA_SCRIPTS_DIR%/deps-clean.bat",
+		},
+		{
+			"label": "Deps Configure (Prebuilt)",
+			"command": "%KRITA_SCRIPTS_DIR%/deps-configure-prebuilt.bat",
+		},
+		{
+			"label": "Deps Configure (Build)",
+			"command": "%KRITA_SCRIPTS_DIR%/deps-configure-build.bat",
 		},
 		{
 			"label": "Open Krita Log",
@@ -80,6 +80,11 @@
 		{
 			"label": "Backup: kritarc, kritashortcutsrc, resourcecache.sqlite",
 			"command": "%KRITA_SCRIPTS_DIR%/tools/backup-config.bat",
+		},
+		{
+			"label": "Open Krita Resources Folder",
+			"command": "explorer",
+			"args": ["%APPDATA%\\krita"],
 		},
 		{
 			"label": "Open resourcecache.sqlite",
